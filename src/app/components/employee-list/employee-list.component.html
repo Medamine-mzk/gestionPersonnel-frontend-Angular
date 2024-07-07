@@ -1,0 +1,18 @@
+<!-- src/app/components/employee-list/employee-list.component.html -->
+<div class="container mt-5">
+    <app-employee-form [selectedEmployee]="selectedEmployee" (employeeSaved)="onEmployeeSaved()"></app-employee-form>
+    <div class="row mt-5">
+      <div class="col-md-4" *ngFor="let employee of employees">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">{{ employee.name }}</h5>
+            <p class="card-text">{{ employee.email }}</p>
+            <p class="card-text">{{ employee.position }}</p>
+            <button class="btn btn-primary me-2" (click)="onSelect(employee)">Edit</button>
+            <button class="btn btn-danger" (click)="onDelete(employee)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
